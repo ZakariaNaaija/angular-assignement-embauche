@@ -1,0 +1,30 @@
+<table *ngIf="personnesEmbauches.length>0" class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">firstname</th>
+        <th scope="col">path</th>
+        <th scope="col">cin</th>
+        <th scope="col">age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let personnesEmbauche of personnesEmbauches">
+        <td>{{personnesEmbauche.id}}</td>
+        <td>{{personnesEmbauche.name}}</td>
+        <td>{{personnesEmbauche.firstname}}</td>
+        <td>
+            <img 
+            width="100"
+            width="100"
+            class="rounded-circle"
+            src="assets/images/{{personnesEmbauche.path | defaultImage}}"
+          />
+            
+        </td>
+        <td>{{personnesEmbauche.cin}}</td>
+        <td>{{personnesEmbauche.age}}</td>
+      </tr>
+    </tbody>
+  </table>
